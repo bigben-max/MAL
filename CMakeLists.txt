@@ -34,3 +34,4 @@ file(GLOB_RECURSE ${PROJECT_NAME}_SRCS src/*.cc)
 
 set(${Name}_LIBS ${PCL_LIBRARIES})
 cmake_add_library(${PROJECT_NAME})
+add_subdirectory(test/function_test)

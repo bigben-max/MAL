@@ -4,7 +4,7 @@
  * @Author: max.zhong
  * @Date: 2021-08-04 01:57:57
  * @LastEditors: max.zhong
- * @LastEditTime: 2021-08-04 02:11:17
+ * @LastEditTime: 2021-08-05 02:20:51
  */
 
 #include <map>
@@ -19,7 +19,7 @@ std::string system_time_str() {
   auto tt =
       std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
   struct tm ptm = *localtime(&tt);
-  return string_format("%04d-%02d-%02d,%02d-%02d-%02d", ptm.tm_year + 1900,
+  return formatString("%04d-%02d-%02d,%02d-%02d-%02d", ptm.tm_year + 1900,
                        ptm.tm_mon + 1, ptm.tm_mday, ptm.tm_hour, ptm.tm_min,
                        ptm.tm_sec);
 }
@@ -34,35 +34,35 @@ class Time_Profile {
  public:
   class TimeNode {
    public:
-    std::string name;
-    double time_begin;
-    double sum_time;
+    std::string name_;
+    double time_begin_;
+    double sum_time_;
     double max_time_;
     double cur_time_;
     int sum_cnt;
 
     TimeNode() {
-      time_begin = -1;
-      name = "";
-      sum_time = 0;
+      time_begin_ = -1;
+      name_ = "";
+      sum_time_ = 0;
       sum_cnt = 0;
       max_time_ = 0;
       cur_time_ = 0;
     }
 
     TimeNode(std::string name_) {
-      time_begin = -1;
-      name = name_;
-      sum_time = 0;
+      time_begin_ = -1;
+      name_ = name_;
+      sum_time_ = 0;
       sum_cnt = 0;
       max_time_ = 0;
       cur_time_ = 0;
     }
 
-    double total_time() { return sum_time; }
+    double total_time() { return sum_time_; }
 
     double avg_time() {
-      if (sum_cnt > 0) return sum_time / sum_cnt;
+      if (sum_cnt > 0) return sum_time_ / sum_cnt;
       return 0;
     }
     double curr_time() {
@@ -94,8 +94,8 @@ class Time_Profile {
       if (time_map.find(name) == time_map.end()) {
         time_map[name] = TimeNode(name);
       }
-      time_map[name].time_begin = time_ms();
-      return time_map[name].time_begin;
+      time_map[name].time_begin_ = time_ms();
+      return time_map[name].time_begin_;
     }
   }
 
@@ -113,15 +113,15 @@ class Time_Profile {
       return -1;
     } else {
       auto &node = time_map[name];
-      if (node.time_begin < 0) {
+      if (node.time_begin_ < 0) {
         printf("time count error! not init for %s\n", name.c_str());
         return -1;
       }
-      double tm = time_ms() - node.time_begin;
+      double tm = time_ms() - node.time_begin_;
       // node.times.push_back(tm);
-      node.time_begin = -1;
+      node.time_begin_ = -1;
       node.sum_cnt += 1;
-      node.sum_time += tm;
+      node.sum_time_ += tm;
       node.cur_time_ = tm;
       if (tm > node.max_time_) node.max_time_ = tm;
       return tm;
@@ -144,7 +144,7 @@ class Time_Profile {
         if (time_map.find(son) != time_map.end()) {
           std::string fills(" ", max_name_length - son.size() - tabs.size());
           std::fill(fills.begin(), fills.end(), ' ');
-          ans += string_format(
+          ans += formatString(
               "| %s%s%s | %10.1f | %8d | %10.1f | %10.1f | %10.1f |\n",
               tabs.c_str(), son.c_str(), fills.c_str(),
               time_map[son].avg_time(), time_map[son].sum_cnt,
@@ -187,7 +187,7 @@ class Time_Profile {
 
 Time_Profile *Time_Profile::p = NULL;
 
-double time_begin(std::string name /* = "" */,
+double time_begin_(std::string name /* = "" */,
                   std::string parent /* = "root"*/) {
   return Time_Profile::instance()->time_start(name, parent);
 }

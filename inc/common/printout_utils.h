@@ -4,11 +4,12 @@
  * @Author: max.zhong
  * @Date: 2021-08-04 01:52:03
  * @LastEditors: max.zhong
- * @LastEditTime: 2021-08-04 02:23:38
+ * @LastEditTime: 2021-08-05 02:12:56
  */
 #pragma once
 #include <string> // string
 #include <memory> // for unqiue_ptr
+#include <boost/format.hpp>
 
 namespace cmc::common {
 #define RESET "\033[0m"
@@ -30,13 +31,8 @@ namespace cmc::common {
 #define BOLDWHITE "\033[1m\033[37m"   /* Bold White */
 
 template <typename... Args>
-std::string string_format(const char *formate, Args... args) {
-  size_t size =
-      snprintf(nullptr, 0, formate, args...) + 1;  // Extra space for '\0'
-  std::unique_ptr<char[]> buf(new char[size]);
-  snprintf(buf.get(), size, formate, args...);
-  return std::string(buf.get(),
-                     buf.get() + size - 1);  // We don't want the '\0' inside
+std::string formatString(std::string const& formate, const Args... args) {
+  return boost::str((boost::format(formate) % ... % args));
 }
 
 }  // namespace cmc::common

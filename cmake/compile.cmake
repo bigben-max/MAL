@@ -13,15 +13,15 @@ macro(cmake_add_executable Name)
   target_link_libraries(${Name} ${${Name}_LIBS})
 endmacro(cmake_add_executable)
 
-macro(my_add_node Name)
+macro(cmake_add_node Name)
   add_executable(${Name}_node ${${Name}_SRCS})
   target_link_libraries(${Name}_node ${${Name}_LIBS})
-endmacro(my_add_node)
+endmacro(cmake_add_node)
 
-macro(my_add_test Name)
+macro(cmake_add_test Name)
   add_executable(${Name}_test ${${Name}_SRCS})
   target_link_libraries(${Name}_test ${${Name}_LIBS})
-endmacro(my_add_test)
+endmacro(cmake_add_test)
 
 macro(install_node)
   # Mark executable scripts (Python etc.) for installation 添加python程序．in
