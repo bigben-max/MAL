@@ -1,0 +1,13 @@
+syntax = "proto2";
+
+import "ros_interface/config_rosinterface.proto";
+
+package base.proto;
+
+message ConfigMessageManager
+{
+  optional ConfigRosTopic ros_topic         = 1;
+  optional uint32         imu_buffer_size   = 2 [ default = 1000 ];
+  optional uint32         lidar_buffer_size = 3 [ default = 20 ];
+  optional uint32         wheel_buffer_size = 4 [ default = 500 ];
+}

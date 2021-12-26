@@ -4,12 +4,12 @@
  * @Author: max.zhong
  * @Date: 2021-08-04 01:36:00
  * @LastEditors: max.zhong
- * @LastEditTime: 2021-08-04 01:52:19
+ * @LastEditTime: 2021-12-26 03:34:18
  */
 #pragma once
 #include <Eigen/Core>  // for Eigen struct
 
-namespace cmc::common {
+namespace base::ldm {
 // typedef Eigen struct
 using MXf = Eigen::Matrix<float, Dynamic, Dynamic>;
 using V3f = Eigen::Vector3f;
@@ -31,4 +31,4 @@ using Quatf = Eigen::Quaternionf;
 using Quatd = Eigen::Quaterniond;
 using Transformd = Eigen::Isometry3d;
 
-}  // namespace cmc::common
+}  // namespace base::ldm

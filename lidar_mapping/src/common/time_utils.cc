@@ -4,30 +4,31 @@
  * @Author: max.zhong
  * @Date: 2021-08-04 01:57:57
  * @LastEditors: max.zhong
- * @LastEditTime: 2021-08-05 02:20:51
+ * @LastEditTime: 2021-12-27 02:54:54
  */
 
+#include <sys/time.h>
+#include <unistd.h>
 #include <map>
 #include <mutex>
 #include <vector>
+//
+#include <ros_interface/common/print_helper.h>
+#include "lidar_mapping/common/time_utils.h"
+// #include "lidar_mapping/common/printout_utils.h"
 
-#include "common/time_utils.h"
-#include "common/printout_utils.h"
-
-namespace cmc::common {
-std::string system_time_str() {
-  auto tt =
-      std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-  struct tm ptm = *localtime(&tt);
-  return formatString("%04d-%02d-%02d,%02d-%02d-%02d", ptm.tm_year + 1900,
-                       ptm.tm_mon + 1, ptm.tm_mday, ptm.tm_hour, ptm.tm_min,
-                       ptm.tm_sec);
-}
+namespace ldm::common {
 
 std::string fill_string(std::string base, int times) {
   std::string ans;
   for (int i = 0; i < times; i++) ans += base;
   return ans;
+}
+
+double time_ms() {
+  struct timeval tv;
+  gettimeofday(&tv, NULL);
+  return tv.tv_sec * 1000.0 + tv.tv_usec / 1000.0;
 }
 
 class Time_Profile {
@@ -144,7 +145,7 @@ class Time_Profile {
         if (time_map.find(son) != time_map.end()) {
           std::string fills(" ", max_name_length - son.size() - tabs.size());
           std::fill(fills.begin(), fills.end(), ' ');
-          ans += formatString(
+          ans += base::formatString(
               "| %s%s%s | %10.1f | %8d | %10.1f | %10.1f | %10.1f |\n",
               tabs.c_str(), son.c_str(), fills.c_str(),
               time_map[son].avg_time(), time_map[son].sum_cnt,
@@ -188,7 +189,7 @@ class Time_Profile {
 Time_Profile *Time_Profile::p = NULL;
 
 double time_begin_(std::string name /* = "" */,
-                  std::string parent /* = "root"*/) {
+                   std::string parent /* = "root"*/) {
   return Time_Profile::instance()->time_start(name, parent);
 }
 
@@ -198,4 +199,4 @@ double time_end(std::string name /* = "" */) {
 
 std::string time_report() { return Time_Profile::instance()->time_report(); }
 
-}  // namespace cmc::common
+}  // namespace ldm::common

@@ -4,14 +4,14 @@
  * @Author: max.zhong
  * @Date: 2021-08-04 01:50:12
  * @LastEditors: max.zhong
- * @LastEditTime: 2021-08-04 01:57:05
+ * @LastEditTime: 2021-12-27 02:51:55
  */
 #pragma once
 
 #include <chrono> // for std::chrono
 #include <string> // for std::string
 
-namespace cmc::common {
+namespace ldm::common {
 class TimeReporter {
  public:
   TimeReporter() : begin_(clock_::now()) {}
@@ -31,8 +31,6 @@ class TimeReporter {
 
 double time_ms();
 
-std::string system_time_str();
-
 std::string fill_string(std::string base, int times);
 
 double time_begin(std::string name = "", std::string parent = "root");
@@ -41,4 +39,4 @@ double time_end(std::string name = "");
 
 std::string time_report();
 
-}  // namespace cmc::common
+}  // namespace base::ldm

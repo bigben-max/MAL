@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>lidar_mapping</name>
+  <version>1.0.0</version>
+  <description>LIDAR-SLAM</description>
+
+  <maintainer email="573267675@qq.com"> Yang Zhong </maintainer>
+  <license>BSD</license>
+  <author email="573267675@qq.com">Yang Zhong</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>catkin_simple</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>kf_msgs</depend>
+  <depend>kf_ros_interface</depend>
+
+</package>
