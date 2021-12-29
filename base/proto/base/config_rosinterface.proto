@@ -1,0 +1,31 @@
+syntax = "proto2";
+
+package base.proto;
+
+message Topic
+{
+  optional string name = 1;
+  optional int32  freq = 2;
+  optional int32  size = 3;
+}
+
+message ConfigRosTopic
+{
+  message ListenTopic
+  {
+    optional Topic imu     = 1;
+    optional Topic gnss    = 2;
+    optional Topic odo     = 3;
+    optional Topic lidar   = 4;
+    optional Topic image_l = 5;
+    optional Topic image_m = 6;
+    optional Topic image_r = 7;
+  }
+  message PublishTopic
+  {
+    optional Topic sync_imu   = 1;
+    optional Topic sync_lidar = 2;
+  }
+  optional ListenTopic  listen_topic  = 1;
+  optional PublishTopic publish_topic = 2;
+}

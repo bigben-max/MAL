@@ -10,10 +10,10 @@
 //
 #include <gtest/gtest.h>
 //
-#include <ros_interface/common/log_helper.h>
-#include <ros_interface/common/print_helper.h>
-#include <ros_interface/ros_api/ros_publish.h>
-#include <ros_interface/common/time_utils.h>
+#include <base/common/log_helper.h>
+#include <base/common/print_helper.h>
+#include <base/ros_api/ros_publish.h>
+#include <base/common/time_utils.h>
 //
 #include "lidar_mapping/io/message_ros.h"
 

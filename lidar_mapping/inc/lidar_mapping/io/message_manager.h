@@ -7,9 +7,9 @@
  * @LastEditTime: 2021-12-26 04:07:18
  */
 #pragma once
-#include <ros_interface/common/data_buffer.h>
-#include <ros_interface/common/print_helper.h>
-#include <ros_interface/data_type/common_struct.h>
+#include <base/common/data_buffer.h>
+#include <base/common/print_helper.h>
+#include <base/data_type/common_struct.h>
 //
 #include "lidar_mapping/config_message_manager.pb.h"
 

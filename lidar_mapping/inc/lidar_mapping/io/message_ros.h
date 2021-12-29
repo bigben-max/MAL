@@ -12,7 +12,7 @@
 //
 #include <ros/ros.h>
 //
-#include <ros_interface/ros_api/ros_msg_convert.h>
+#include <base/ros_api/ros_msg_convert.h>
 //
 #include "lidar_mapping/io/message_manager.h"
 

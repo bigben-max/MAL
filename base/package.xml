@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>base</name>
+  <version>0.0.1</version>
+  <description>
+  base function and communication interface
+  </description>
+  <maintainer email="573267675@qq.com"> Yang Zhong </maintainer>
+  <license>BSD</license>
+  <author email="573267675@qq.com">Max Zhong</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>catkin_simple</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>tf</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>gps_common</depend>
+  <depend>message_generation</depend>
+  <depend>message_runtime</depend>
+  <depend>protobuf_catkin</depend>
+</package>

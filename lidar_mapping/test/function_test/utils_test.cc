@@ -10,8 +10,8 @@
 //
 #include <gtest/gtest.h>
 //
-#include <ros_interface/common/print_helper.h>
-#include <ros_interface/common/log_helper.h>
+#include <base/common/print_helper.h>
+#include <base/common/log_helper.h>
 // namespace cmc {
 TEST(UTILSTest, string_format_test) {
   int cnt = 999;

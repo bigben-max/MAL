@@ -1,6 +1,6 @@
 syntax = "proto2";
 
-import "ros_interface/config_rosinterface.proto";
+import "base/config_rosinterface.proto";
 
 package base.proto;
 
