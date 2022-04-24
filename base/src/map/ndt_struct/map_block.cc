@@ -6,7 +6,7 @@
  * @LastEditors: max.zhong
  * @LastEditTime: 2021-12-28 02:49:36
  */
-#include "base/map_struct/map_block.h"
+#include "base/map/ndt_struct/map_block.h"
 
 namespace base::map {
 

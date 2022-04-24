@@ -8,7 +8,7 @@
  */
 #pragma once
 #include <base/common/macros.h>
-#include <base/common/math_utils.h>
+#include <base/math/math_utils.h>
 //
 // #include "lidar_mapping/algorithm/msf/state.h"
 #include "lidar_mapping/algorithm/msf/state_helper.h"

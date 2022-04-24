@@ -10,7 +10,7 @@
 #include <string>
 #include <vector>
 //
-#include "base/map_struct/rect2d.h"
+#include "base/map/ndt_struct/rect2d.h"
 
 namespace base::map {
 

@@ -9,7 +9,7 @@
 
 #include <string>
 //
-#include "base/map_struct/map_config.h"
+#include "base/map/ndt_struct/map_config.h"
 
 namespace base::map {
 

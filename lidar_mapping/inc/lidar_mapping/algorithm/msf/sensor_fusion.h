@@ -11,7 +11,7 @@
 #include <string>
 #include <vector>
 //
-#include <base/common/log.h>
+#include <base/log/log.h>
 #include <base/data_type/sensor_type.h>
 //
 #include "lidar_mapping/config_fusion.pb.h"

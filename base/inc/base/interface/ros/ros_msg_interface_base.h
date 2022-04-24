@@ -13,10 +13,10 @@
 // thrid lib
 #include <ros/ros.h>
 
-#include "base/common/log.h"
+#include "base/log/log.h"
 #include "base/data_type/common_struct.h"
-#include "base/ros_api/ros_msg_convert.h"
-#include "base/ros_api/ros_publish.h"
+#include "base/interface/ros/ros_msg_convert.h"
+#include "base/interface/ros/ros_publish.h"
 
 namespace base {
 

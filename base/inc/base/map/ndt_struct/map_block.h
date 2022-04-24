@@ -16,8 +16,8 @@
 //
 #include <Eigen/Eigenvalues>
 //
-#include "base/map_struct/map_block_index.h"
-#include "base/map_struct/map_config.h"
+#include "base/map/ndt_struct/map_block_index.h"
+#include "base/map/ndt_struct/map_config.h"
 namespace base::map {
 
 /**@brief The data structure of a single ndt map grid. */

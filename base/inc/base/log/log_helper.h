@@ -10,7 +10,7 @@
 #pragma once
 
 #include "base/common/file.h"
-#include "base/common/log.h"
+#include "base/log/log.h"
 
 namespace base {
 inline void InitLogging(const std::string &log_path,

@@ -12,7 +12,7 @@
 #include <memory>  // for unqiue_ptr
 #include <string>  // string
 
-#include "base/common/log.h"
+#include "base/log/log.h"
 #include "base/config_rosinterface.pb.h"
 
 namespace base {

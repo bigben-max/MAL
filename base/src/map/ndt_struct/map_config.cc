@@ -6,8 +6,8 @@
  */
 #include <boost/foreach.hpp>
 //
-#include "base/map_struct/map_config.h"
-#include "base/common/log_helper.h"
+#include "base/map/ndt_struct/map_config.h"
+#include "base/log/log_helper.h"
 
 namespace base::map {
 

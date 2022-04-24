@@ -4,10 +4,9 @@
  * @LastEditors: max.zhong
  * @LastEditTime: 2021-12-28 02:56:14
  */
-#include <gtest/gtest.h>
-#include <glog/logging.h>
-//
-#include "base/map_struct/map_block_index.h"
+
+#include "base/log/log.h"
+#include "base/map/ndt_struct/map_block_index.h"
 
 namespace base::map {
   

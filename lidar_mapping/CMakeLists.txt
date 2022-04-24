@@ -29,7 +29,7 @@ link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
 cs_add_library(${PROJECT_NAME} ${${PROJECT_NAME}_src} ${PROTO_SRCS})
-target_link_libraries(${PROJECT_NAME} glog)
+target_link_libraries(${PROJECT_NAME} glog gflags)
 
 # cs_add_executable(ros_interface_demo_node node/ros_interface_demo_node.cc)
 # target_link_libraries(ros_interface_demo_node ${PROJECT_NAME} glog)

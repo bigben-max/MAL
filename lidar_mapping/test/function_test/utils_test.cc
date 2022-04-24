@@ -11,7 +11,7 @@
 #include <gtest/gtest.h>
 //
 #include <base/common/print_helper.h>
-#include <base/common/log_helper.h>
+#include <base/log/log_helper.h>
 // namespace cmc {
 TEST(UTILSTest, string_format_test) {
   int cnt = 999;

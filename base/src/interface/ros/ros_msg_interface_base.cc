@@ -7,7 +7,7 @@
  * @LastEditTime: 2021-09-03 02:30:05
  */
 
-#include "base/ros_api/ros_msg_interface_base.h"
+#include "base/interface/ros/ros_msg_convert.h"
 
 // namespace base {
 // }  // namespace base

@@ -12,7 +12,7 @@
 #include <pcl_conversions/pcl_conversions.h>
 //
 #include <tf/transform_broadcaster.h>
-#include "base/ros_api/ros_msg_convert.h"
+#include "base/interface/ros/ros_msg_convert.h"
 
 namespace base {
 
