@@ -4,9 +4,9 @@
   <version>1.0.0</version>
   <description>LIDAR-SLAM</description>
 
-  <maintainer email="573267675@qq.com"> Yang Zhong </maintainer>
+  <maintainer email="573267675@qq.com"> Max Zhong </maintainer>
   <license>BSD</license>
-  <author email="573267675@qq.com">Yang Zhong</author>
+  <author email="573267675@qq.com">Max Zhong</author>
 
   <buildtool_depend>catkin</buildtool_depend>
   <buildtool_depend>catkin_simple</buildtool_depend>

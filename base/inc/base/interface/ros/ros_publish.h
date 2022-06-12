@@ -30,4 +30,4 @@ void publishPointCloud(const ros::Publisher& publisher,
 
 }  // namespace base
 
-#include "base/ros_api/ros_publish_impl.h"
+#include "base/interface/ros/ros_publish_impl.h"

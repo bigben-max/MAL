@@ -21,7 +21,7 @@ namespace base::ldm {
 TEST(IOTest, message_ros_test) {
   base::proto::ConfigMessageManager config;
   std::string config_path =
-      "/home/max/catkin_ws/src/LidarMAL/lidar_mapping/config/"
+      "/home/max/catkin_ws/src/MAL/lidar_mapping/config/"
       "config_lidar_mapping.cfg";
   ACHECK(GetProtoFromASCIIFile(config_path, &config));
   MessageRos msg_ros(config);
