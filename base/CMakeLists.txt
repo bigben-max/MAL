@@ -25,9 +25,13 @@ include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
 
-cs_add_library(${PROJECT_NAME} ${${PROJECT_NAME}_src} ${PROTO_SRCS})
-target_link_libraries(${PROJECT_NAME} ${PCL_LIBRARIES} ${catkin_LIBRARIES} glog gflags)
+find_package(libLAS REQUIRED)
 
+
+cs_add_library(${PROJECT_NAME} ${${PROJECT_NAME}_src} ${PROTO_SRCS})
+target_link_libraries(${PROJECT_NAME} ${PCL_LIBRARIES} ${libLAS_LIBRARIES} ${catkin_LIBRARIES} glog gflags)
+
+add_subdirectory(test/)
 
 set(${PROJECT_NAME}_LOCAL_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/inc)
 cs_install()
